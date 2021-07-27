@@ -1,7 +1,24 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-	<h1>Posts</h1>
-	{% for post in posts %}
-		<h1>{{post.author}}</h1>
-	{% endfor %}
+{% for post in posts %}
+<!-- <h3>{{post.title}}</h3>
+<p>By {{post.author}} on {{post.published_at|date:'F d, Y'}}</p>
+<p>{{post.content}}</p> -->
+<div class="container">
+    <div class="card mb-3 mt-5" style="max-width: 740px; height: 200px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="https://blogs-images.forbes.com/jvchamary/files/2015/12/darth_vader-1200x600.jpg" alt="..." style="height:200px; width:270px;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body ml-5 mt-4">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.content}}</p>
+                    <p class="card-text"><small class="text-muted">{{post.published_at}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}

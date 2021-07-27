@@ -1,11 +1,10 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@600&display=swap');
 nav {
 	font-family: 'Encode Sans SC', sans-serif;
 	letter-spacing: 0.1rem;
 }
 
-h3 {
+nav h3 {
 	color: green;
 }
 @media (max-width: 768px) {
