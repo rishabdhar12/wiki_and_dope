@@ -15,11 +15,20 @@ nav h3 {
     }
 }
 
-
 @media (min-width: 768px) {
     .navbar-nav.navbar-center {
         position: absolute;
         left: 50%;
         transform: translatex(-50%);
     }
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.card {
+    display: inline-block;
 }

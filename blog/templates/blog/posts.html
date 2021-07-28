@@ -1,14 +1,45 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
-
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock styles %}
 
-<div class="col-sm-4 fixed-top ml-auto topics-bar">
+<!-- Horizontal Menu -->
+<div class="scrolling-wrapper mt-2 d-lg-none .d-xl-block">
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+    <div class="card">
+        <h2>Card</h2>
+    </div>
+</div>
+
+<!-- Sidebar -->
+<div class="col-sm-2 fixed-top ml-auto topics-bar" style="margin-right:50px;">
     <div class="content-section">
-        <ul class="list-group d-none d-lg-block" style="margin-top: 7.1rem;">
+        <ul class="list-group d-none d-lg-block" style="margin-top: 7.1rem; font-size:0.9rem">
             <li class="list-group-item list-group-item-light">Latest Posts</li>
             <li class="list-group-item list-group-item-light">Announcements</li>
             <li class="list-group-item list-group-item-light">Calendars</li>
@@ -16,6 +47,7 @@
         </ul>
     </div>
 </div>
+<!-- Post Container -->
 <div class="container mt-5">
     {% for post in posts %}
     <div class="card mb-3 shadow-sm p-3 mb-5 bg-white rounded" style="max-width: 740px;">
@@ -24,7 +56,7 @@
                 <img class="img-fluid" src="https://www.pixelstalk.net/wp-content/uploads/2016/05/Star-wars-darth-vader-desktop-wallpaper.jpg" alt="..." style="height:100%;">
             </div>
             <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body ml-3">
                     <h5 class="card-title">{{post.title}}</h5>
                     <p class="card-text"><small class="text-muted">By {{post.author}} on {{post.published_at|date:'F d, Y'}}</small></p>
                     <p class="card-text">{{post.content}}</p>
