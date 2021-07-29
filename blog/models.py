@@ -9,6 +9,7 @@ class Post(models.Model):
 	title = models.CharField(max_length=100)
 	content = models.TextField()
 	published_at = models.DateTimeField(default=timezone.now)
+	image = models.ImageField(default='default.jpg', upload_to='images')
 
 
 	def __str__(self):

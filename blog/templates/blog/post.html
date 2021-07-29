@@ -1,4 +1,8 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
-<h1>{{post.title}}</h1>
+<div class="container" style="max-width:800px;">
+    <img src="{{ post.image.url }}" class="img-rounded mt-3 mb-4" alt="Cinque Terre" style="width:100%;" height="auto">
+    <h1 class="post-header">{{post.title}}</h1>
+</div>
 {% endblock %}

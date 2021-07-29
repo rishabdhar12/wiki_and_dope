@@ -32,3 +32,7 @@ nav h3 {
 .card {
     display: inline-block;
 }
+
+.post-header {
+    color: green;
+}
