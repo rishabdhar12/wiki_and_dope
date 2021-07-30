@@ -4,7 +4,6 @@
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock styles %}
-
 <!-- Horizontal Menu -->
 <div class="scrolling-wrapper mt-2 d-lg-none .d-xl-block">
     <div class="card">
@@ -35,7 +34,6 @@
         <h2>Card</h2>
     </div>
 </div>
-
 <!-- Sidebar -->
 <div class="col-sm-2 fixed-top ml-auto topics-bar" style="margin-right:50px;">
     <div class="content-section">
@@ -59,7 +57,7 @@
                 <div class="card-body ml-3">
                     <h5 class="title card-title font-weight-bold" style="font-family: 'Encode Sans SC', sans-serif; letter-spacing:1.5px;">{{post.title}}</h5>
                     <p class="card-text"><small class="text-muted">By {{post.author}} on {{post.published_at|date:'F d, Y'}}</small></p>
-                    <p class="card-text text-truncate d-none d-lg-block">{{post.content|safe}}</p>
+                    <p class="card-text d-none d-lg-block">{{post.content | safe | truncatewords:10}}</p>
                     <a href="{% url 'post' post.id %}" class="card-link"><small>Read More...</small></a>
                 </div>
             </div>

@@ -7,8 +7,6 @@
         {% csrf_token %}
         {{form.media}}
         {{ form | crispy }}
-        <!-- {{ form.author | attr:"class:form-control" }} -->
-        <!-- {% crispy form %} -->
         <button type="submit" class="btn btn-success mt-3">Publish</button>
         <a href="{% url 'home' %}" class="btn btn-danger mt-3">Cancel</a>
     </form>
