@@ -57,9 +57,9 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body ml-3">
-                    <h5 class="card-title text-truncate">{{post.title}}</h5>
+                    <h5 class="title card-title font-weight-bold" style="font-family: 'Encode Sans SC', sans-serif; letter-spacing:1.5px;">{{post.title}}</h5>
                     <p class="card-text"><small class="text-muted">By {{post.author}} on {{post.published_at|date:'F d, Y'}}</small></p>
-                    <p class="card-text text-truncate d-none d-lg-block">{{post.content}}</p>
+                    <p class="card-text text-truncate d-none d-lg-block">{{post.content|safe}}</p>
                     <a href="{% url 'post' post.id %}" class="card-link"><small>Read More...</small></a>
                 </div>
             </div>

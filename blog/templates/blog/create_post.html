@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %} 
+<!-- {% load widget_tweaks %} -->
+<div class="container-fluid mt-5 mb-5" style="width:700px;">
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{form.media}}
+        {{ form | crispy }}
+        <!-- {{ form.author | attr:"class:form-control" }} -->
+        <!-- {% crispy form %} -->
+        <button type="submit" class="btn btn-success mt-3">Publish</button>
+        <a href="{% url 'home' %}" class="btn btn-danger mt-3">Cancel</a>
+    </form>
+</div>
+{% endblock content %}
