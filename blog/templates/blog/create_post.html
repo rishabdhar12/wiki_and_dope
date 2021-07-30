@@ -1,11 +1,11 @@
 {% extends 'blog/base.html' %}
-{% block content %}
 {% load crispy_forms_tags %} 
+{% block content %}
 <!-- {% load widget_tweaks %} -->
 <div class="container-fluid mt-5 mb-5" style="width:700px;">
-    <form method="POST" class="form-group">
+    <form method="POST" class="form-group" enctype="multipart/form-data">
         {% csrf_token %}
-        {{form.media}}
+        {{ form.media }}
         {{ form | crispy }}
         <button type="submit" class="btn btn-success mt-3">Publish</button>
         <a href="{% url 'home' %}" class="btn btn-danger mt-3">Cancel</a>
