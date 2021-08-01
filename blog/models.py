@@ -6,7 +6,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Post(models.Model):
-	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	author = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 	title = models.CharField(max_length=100)
 	content = RichTextField(null=True, blank=True)
 	published_at = models.DateTimeField(auto_now_add=True)

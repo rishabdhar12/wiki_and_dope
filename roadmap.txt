@@ -1,5 +1,2 @@
-1. Posts.
-2. Single Post.
-3. User Authentication.
-4. CRUD.
-5. Profile.
+1. Profile
+2. User Specific Post
