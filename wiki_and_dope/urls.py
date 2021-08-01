@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from users.views import CustomRegister
+from users.views import CustomRegister, CustomLogin
+from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include('blog.urls')),
-    path("register/", CustomRegister, name='register'),
+    path("register/", CustomRegister.as_view(), name='register'),
+    path("login/", CustomLogin.as_view(), name='login'),
+    path("logout/", LogoutView.as_view(next_page='login'), name='logout'),
 ]
 
 
