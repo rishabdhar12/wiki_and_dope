@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="container-fluid mt-5 mb-5" style="width:700px;">
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form | crispy }}
+        <button type="submit" class="btn btn-success mt-3">Register</button>
+    </form>
+</div>
+{% endblock content %}
