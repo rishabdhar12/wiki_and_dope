@@ -1,11 +1,26 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
-<div class="container" style="max-width:900px;">
-    <div class="col-xs-1" align="center">
-        <img src="{{ user.profile.profile_pic.url }}" class="rounded-circle account-image mt-3 mb-4" style="height:150px; width:150px;">
-        <h1 class="account-heading" style="font-family:'Russo One',sans-serif;">{{user.username}}</h1>
-        <p>{{ user.email }}</p>
+
+<div class="container-fluid center-m" style="max-width:600px;">
+    <div class="text-center">
+        <h1 style="margin-top:4rem; font-family:Russo One;">About You</h1>
     </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-8">
+            <h5 class="mt-4 text-center text-md-left p-2"><b>Name</b></h5>
+            <p class="mt-3 text-center text-md-left p-2">{{ user.username }}</p>
+        </div>
+        <div class="col-sm-4 align-self-sm-end">
+            <img class="rounded-circle mt-3 d-block mx-auto mx-md-0" src="{{ user.profile.profile_pic.url }}" style="width:100px; height:100px;"></img>
+        </div>
+    </div>
+    <hr />
+    <div class="mt-5">
+        <h5 class="mt-4 text-center text-md-left p-2"><b>Email</b></h5>
+        <p class="mt-3 text-center text-md-left p-2">{{ user.email }}</p>
+    </div>
+    <hr />
 </div>
 {% endblock %}
