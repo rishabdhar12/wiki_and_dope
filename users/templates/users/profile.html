@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="max-width:900px;">
+    <div class="col-xs-1" align="center">
+        <img src="{{ user.profile.profile_pic.url }}" class="rounded-circle account-image mt-3 mb-4" style="height:150px; width:150px;">
+        <h1 class="account-heading" style="font-family:'Russo One',sans-serif;">{{user.username}}</h1>
+        <p>{{ user.email }}</p>
+    </div>
+</div>
+{% endblock %}

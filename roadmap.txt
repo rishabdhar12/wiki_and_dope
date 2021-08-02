@@ -1,2 +1,4 @@
 1. Profile
 2. User Specific Post
+3. Comment
+4. Like
