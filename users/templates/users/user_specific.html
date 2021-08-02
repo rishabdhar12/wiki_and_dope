@@ -1,0 +1,6 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% for post in specific_post %}
+	<h1>{{post.author}}</h1>
+{% endblock %}

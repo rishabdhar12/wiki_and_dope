@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock styles %}
+<!-- Post Container -->
+<div class="container mt-5">
+    {% for post in posts %}
+    <div class="card mb-3 shadow-sm p-3 mb-5 bg-white rounded" style="max-width: 740px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img class="img-fluid" src="{{ post.image.url }}" alt="..." style="height:100%;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body ml-3">
+                    <h5 class="title card-title font-weight-bold" style="font-family: 'Encode Sans SC', sans-serif; letter-spacing:1.5px;">{{post.title}}</h5>
+                    <p class="card-text"><small class="text-muted">By {{post.author}} on {{post.published_at|date:'F d, Y'}}</small></p>
+                    <p class="card-text d-none d-lg-block">{{post.content | safe | truncatewords:10}}</p>
+                    <a href="{% url 'post' post.id %}" class="card-link"><small>Read More...</small></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

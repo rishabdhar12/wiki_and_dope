@@ -22,5 +22,9 @@
         <p class="mt-3 text-center text-md-left p-2">{{ user.email }}</p>
     </div>
     <hr />
+    <div class="mt-5 mb-5 d-flex justify-content-between">
+        <a class="btn btn-primary">Edit Info</a>
+        <a class="btn btn-outline-dark" href="{% url 'index_page' %}">View Your Posts</a>
+    </div>
 </div>
 {% endblock %}
