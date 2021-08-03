@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid center-m" style="max-width:700px;">
+    <h1 class="mt-5 text-center" style="font-family:'Russo One';">Are You Sure?</h1>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <form method="POST">
+        	{% csrf_token %}
+            <button type="submit" class="btn btn-danger mt-3">Delete</button>
+        </form>
+        <a href="{% url 'specific_posts' %}" class="ml-4 mt-3">
+            <button class="btn btn-primary">Cancel</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

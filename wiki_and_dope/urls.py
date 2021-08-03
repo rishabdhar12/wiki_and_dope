@@ -19,6 +19,7 @@ from users.views import CustomRegister, CustomLogin, Profile
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
+from blog.views import PostUpdate, PostDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,8 @@ urlpatterns = [
     path("login/", CustomLogin.as_view(), name='login'),
     path("logout/", LogoutView.as_view(next_page='login'), name='logout'),
     path("profile/", Profile, name='profile'),
+    path("post/<int:pk>/update_post/", PostUpdate.as_view(), name="update_post"),
+    path("post/<int:pk>/delete_post/", PostDelete.as_view(), name="delete_post"),
 
 ]
 

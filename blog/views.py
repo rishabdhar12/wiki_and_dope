@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Post
 
@@ -46,7 +46,21 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	fields = ["title", "content", "image"]
 	context_object_name = 'update_post'
 	template_name = 'blog/update_post.html'
-	success_url = reverse_lazy('post')
+	success_url = reverse_lazy('specific_posts')
+
+	def test_func(self):
+		post = self.get_object()
+		if self.request.user == post.author:
+			return True
+		return False
+
+
+class PostDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+	model = Post
+	fields = "__all__"
+	context_object_name = 'delete_post'
+	template_name = 'blog/delete_post.html'
+	success_url = reverse_lazy('specific_posts')
 
 	def test_func(self):
 		post = self.get_object()
