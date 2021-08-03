@@ -19,7 +19,6 @@ A simple blog application created using Django and Bootstrap
 * Bootstrap docs : https://getbootstrap.com/docs/4.6/getting-started/introduction/
 * Django tutorials by Corey Schafer : https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
 
-# Deployment
 
 
 
@@ -35,6 +34,7 @@ A simple blog application created using Django and Bootstrap
 * Add comments section and likes/dislikes.
 * Add categories.
 * Email and password reset feature.
+* Deploy the application
 
 
 # Contributors
