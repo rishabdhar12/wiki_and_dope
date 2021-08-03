@@ -1,4 +1,3 @@
-. User Specific Post
 . U, D
 . Comment
 . Like
