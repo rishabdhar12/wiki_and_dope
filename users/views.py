@@ -8,9 +8,13 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from PIL import Image
 
 from blog.models import Post
 from .models import Profile
+
+from .forms import UserUpdateForm, ProfileUpdateForm
 
 # Create your views here.
 
@@ -46,3 +50,22 @@ class CustomLogin(LoginView):
 
 def Profile(request):
     return render(request, 'users/profile.html')
+
+
+@login_required
+def UpdateProfile(request):
+    model = Profile
+    fields = "__all__"
+    if request.method == 'POST':
+        p_form = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
+        u_form = UserUpdateForm(request.POST,instance=request.user)
+        if p_form.is_valid() and u_form.is_valid():
+            u_form.save()
+            p_form.save()
+            return redirect('profile')
+    else:
+        p_form = ProfileUpdateForm(instance=request.user)
+        u_form = UserUpdateForm(instance=request.user.profile)
+
+    context={'p_form': p_form, 'u_form': u_form}
+    return render(request, 'users/update_profile.html',context)

@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- {% load widget_tweaks %} -->
+<div class="container-fluid mt-5 mb-5" style="width:700px;">
+    <form method="POST" class="form-group" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ u_form| crispy }}
+		{{ p_form | crispy }}
+        <button type="submit" class="btn btn-success mt-3">Update</button>
+        <a href="{% url 'profile' %}" class="btn btn-danger mt-3">Cancel</a>
+    </form>
+</div>
+{% endblock content %}

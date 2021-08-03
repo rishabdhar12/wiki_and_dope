@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from users.views import CustomRegister, CustomLogin, Profile
+from users.views import CustomRegister, CustomLogin, Profile, UpdateProfile
 from django.contrib.auth.views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,6 +30,8 @@ urlpatterns = [
     path("profile/", Profile, name='profile'),
     path("post/<int:pk>/update_post/", PostUpdate.as_view(), name="update_post"),
     path("post/<int:pk>/delete_post/", PostDelete.as_view(), name="delete_post"),
+    path("update_profile/", UpdateProfile, name="update_profile"),
+
 
 ]
 
