@@ -9,6 +9,13 @@ A simple blog application created using Django and Bootstrap
 * Update, Deleter User.
 * Markdown Text Editor.
 
+![alt text](https://github.com/rishabdhar12/wiki_and_dope/blob/master/other/screencapture-localhost-8000-2021-08-04-02_06_04.png)
+![alt text](https://github.com/rishabdhar12/wiki_and_dope/blob/master/other/create.png)
+![alt text](https://github.com/rishabdhar12/wiki_and_dope/blob/master/other/profile.png)
+![alt text](https://github.com/rishabdhar12/wiki_and_dope/blob/master/other/registration.png)
+
+
+
 
 # Codes and Resources Used
 
