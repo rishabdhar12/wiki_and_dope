@@ -6,7 +6,7 @@ A simple blog application created using Django and Bootstrap
 # Features
 * User authentication
 * Create, Update, Delete, View Posts.
-* Update, Deleter User.
+* Update, Delete User.
 * Markdown Text Editor.
 
 ![alt text](https://github.com/rishabdhar12/wiki_and_dope/blob/master/other/screencapture-localhost-8000-2021-08-04-02_06_04.png)
@@ -46,7 +46,7 @@ A simple blog application created using Django and Bootstrap
 
 # Contributors
 
-Contributions are always and highly appreciated.  Please star the repo and feel free to make pull requests.
+Contributions are always welcome and highly appreciated.  Please star the repo and feel free to make pull requests.
 
 
 
