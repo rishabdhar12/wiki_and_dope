@@ -5,64 +5,66 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock styles %}
 <!-- Horizontal Menu -->
-<div class="scrolling-wrapper mt-2 d-lg-none .d-xl-block">
-    <div class="card">
-        <h2>Card</h2>
+<main class="posts">
+<!--     <div class="scrolling-wrapper mt-2 d-lg-none .d-xl-block">
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+        <div class="card">
+            <h2>Card</h2>
+        </div>
+    </div> -->
+    <!-- Sidebar -->
+    <div class="col-sm-2 fixed-top ml-auto topics-bar" style="margin-right:50px;">
+        <div class="content-section">
+            <ul class="list-group d-none d-lg-block" style="margin-top: 7.1rem; font-size:0.9rem">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+            </ul>
+        </div>
     </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-    <div class="card">
-        <h2>Card</h2>
-    </div>
-</div>
-<!-- Sidebar -->
-<div class="col-sm-2 fixed-top ml-auto topics-bar" style="margin-right:50px;">
-    <div class="content-section">
-        <ul class="list-group d-none d-lg-block" style="margin-top: 7.1rem; font-size:0.9rem">
-            <li class="list-group-item list-group-item-light">Latest Posts</li>
-            <li class="list-group-item list-group-item-light">Announcements</li>
-            <li class="list-group-item list-group-item-light">Calendars</li>
-            <li class="list-group-item list-group-item-light">etc</li>
-        </ul>
-    </div>
-</div>
-<!-- Post Container -->
-<div class="container mt-5">
-    {% for post in posts %}
-    <div class="card mb-3 shadow-sm p-3 mb-5 bg-white rounded" style="max-width: 740px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img class="img-fluid" src="{{ post.image.url }}" alt="..." style="height:100%;">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body ml-3">
-                    <h5 class="title card-title font-weight-bold" style="font-family: 'Encode Sans SC', sans-serif; letter-spacing:1.5px;">{{post.title}}</h5>
-                    <p class="card-text"><small class="text-muted">By {{post.author}} on {{post.published_at|date:'F d, Y'}}</small></p>
-                    <p class="card-text d-none d-lg-block">{{post.content | safe | truncatewords:10}}</p>
-                    <a href="{% url 'post' post.id %}" class="card-link"><small>Read More...</small></a>
+    <!-- Post Container -->
+    <div class="container mt-5 ">
+        {% for post in posts %}
+        <div class="card mb-3 shadow-sm p-3 mb-5 rounded" style="max-width: 740px; background-color: #272c34;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="{{ post.image.url }}" alt="..." style="height:100%;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body ml-3">
+                        <h5 class="title card-title font-weight-bold" style="font-family: 'Encode Sans SC', sans-serif; letter-spacing:1.5px;">{{post.title}}</h5>
+                        <p class="card-text"><small class="text-muted">By {{post.author}} on {{post.published_at|date:'F d, Y'}}</small></p>
+                        <p class="card-text d-none d-lg-block">{{post.content | safe | truncatewords:10}}</p>
+                        <a href="{% url 'post' post.id %}" class="card-link"><small>Read More...</small></a>
+                    </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+</main>
 {% endblock %}

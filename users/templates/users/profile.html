@@ -5,8 +5,8 @@
     <div class="text-center">
         <h1 style="margin-top:4rem; font-family:Russo One;">About You</h1>
     </div>
-    <hr />
-    <div class="row">
+    <hr style="background-color:#fff;" />
+    <div class="row  mb-5">
         <div class="col-sm-8">
             <h5 class="mt-4 text-center text-md-left p-2"><b>Name</b></h5>
             <p class="mt-3 text-center text-md-left p-2">{{ user.username }}</p>
@@ -15,17 +15,17 @@
             <img class="rounded-circle mt-3 d-block mx-auto mx-md-0" src="{{ user.profile.profile_pic.url }}" style="width:100px; height:100px;"></img>
         </div>
     </div>
-    <hr />
-    <div class="mt-5">
+    <hr style="background-color:#424242;" />
+    <div class="mt-5 mb-5">
         <h5 class="mt-4 text-center text-md-left p-2"><b>Email</b></h5>
         <p class="mt-3 text-center text-md-left p-2">{{ user.email }}</p>
     </div>
-    <hr />
+    <hr style="background-color:#424242;" />
     <div class="mt-5 mb-5 d-flex justify-content-between">
         <a class="btn btn-primary" href="{% url 'update_profile' %}">
             Edit Info
         </a>
-        <a class="btn btn-outline-dark" href="{% url 'specific_posts' %}">View Your Posts</a>
+        <a class="btn btn-outline-light" href="{% url 'specific_posts' %}">View Your Posts</a>
     </div>
 </div>
 {% endblock %}

@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@600&display=swap');
 
+body {
+    background-color: #121212;
+    color: #ccc;
+}
+
 nav {
     font-family: 'Encode Sans SC', sans-serif;
     letter-spacing: 0.1rem;
@@ -32,3 +37,4 @@ nav h3 {
 .card {
     display: inline-block;
 }
+
